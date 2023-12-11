@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&family=Roboto+Condensed&family=Roboto+Flex:opsz,wght@8..144,200;8..144,300;8..144,400&display=swap');
+
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.main-window {
+    position: absolute;
+    width: 40vw;
+    height: 60vh;
+    left: 30vw;
+    top: 15vh;
+    color: white;
+    font-size: 16px;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #ffffff23;
+    backdrop-filter: blur(10px);
+    border: 1px solid white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.window-field {
+    width: 90%;
+    height: 32px;
+    margin: 15px auto 15px auto;
+    background-color: #ffffff20;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+.login-button {
+    color: white;
+    background-color: rgb(146, 93, 207);
+    border: none;
+    border-radius: 5px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 36px;
+    padding: 5px 50px 5px 50px;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+
+a {
+    cursor: pointer;
+}
+
+input {
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+@media (max-width: 1250px) {
+    .main-window {
+        width: 50vw;
+        left: 25vw;
+    }
+}
+
+@media (max-width: 800px) {
+    .main-window {
+        width: 70vw;
+        left: 15vw;
+    }
+}
+
+@media (max-width: 500px) {
+    .main-window {
+        width: 80vw;
+        left: 10vw;
+    }
+}
