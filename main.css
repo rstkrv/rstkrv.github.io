@@ -247,7 +247,8 @@ main {
 .stuff-description {
     width: 18vw;
     height: 0;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: scroll;
     margin-left: 1vw;
     display: flex;
     justify-content: start;
