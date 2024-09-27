@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSGuessr</title>
+    <style>
+        body {
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        img {
+            max-width: 80%;
+            height: auto;
+            margin: 20px 0;
+        }
+        #clickableImage {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Найди на карте локацию с первой картинки</h1>
+
+    <!-- Unclickable image -->
+    <img src="images/1.png" alt="Unclickable Image">
+
+    <!-- Clickable image -->
+    <img id="clickableImage" src="images/1map.jpg" alt="Clickable Image">
+    
+    <script>
+        // Coordinates of the second point (hardcoded)
+        const fixedPoint = { x: 359, y: 273 }; // Example coordinates on the image
+
+        // Function to calculate the distance between two points
+        function calculateDistance(x1, y1, x2, y2) {
+            return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+        }
+
+        document.getElementById('clickableImage').addEventListener('click', function(event) {
+            // Get the position of the click relative to the image
+            const rect = this.getBoundingClientRect();
+            const xClick = event.clientX - rect.left;
+            const yClick = event.clientY - rect.top;
+
+            // Calculate the distance to the hardcoded point
+            const distance = calculateDistance(xClick, yClick, fixedPoint.x, fixedPoint.y);
+
+            // Show the result in a pop-up
+            alert(`Distance from click to point (${fixedPoint.x}, ${fixedPoint.y}) is: ${distance.toFixed(2)} pixels`);
+        });
+    </script>
+</body>
+</html>
